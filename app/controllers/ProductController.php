@@ -16,7 +16,7 @@ class ProductController extends \BaseController {
                         ->join('labels','products.id_label_fk','=','labels.id','left')
                         ->join('bottles_size','products.id_size_fk','=','bottles_size.id','left')
                         ->join('images','products.id','=','images.id_product_fk','right')
-                        ->select('products.id', 'products.product', 'products.description', 'products.price', 'products.active', 'products.ordering', 'currencies.prefix', 'labels.label','bottles_size.size','bottles_size.unit', 'images.path_image')
+                        ->select('products.id', 'products.product', 'products.description', 'products.price', 'products.active', 'products.ordering', 'currencies.prefix', 'labels.label','bottles_size.size','images.path_image')
                         ->orderBy('products.ordering', 'desc')
                         ->paginate(10);
 

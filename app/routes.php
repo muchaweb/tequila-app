@@ -4,8 +4,12 @@ Route::api(['version' => 'v1', 'before' => 'api.logs'], function(){
 
   //There can be a group of routes
   //Unless you change the version of the API this route will run.
-  Route::get('api/products', 'APIProductController@index');
-  Route::get('api/products/{id}', 'APIProductController@show');
+  //First get by category
+  Route::get('api/category', 'APICategoryController@index');
+  Route::get('api/category/{id}', 'APICategoryController@show');
+  
+  /*Route::get('api/products', 'APIProductController@index');
+  Route::get('api/product/{id}', 'APIProductController@show');*/
 
 });
 

@@ -43,13 +43,6 @@ class Product extends Eloquent{
         'image'     => 'Debe subir una imagen',
         'mimes'     => 'Revise el tipo de archivo'
     );
-
-
-    public function gallery()
-    {
-       return $this->hasMany('Gallery', 'id_product_fk');
-    }   
-
 }
 
 

@@ -10,7 +10,8 @@
 		"intervention/image": "dev-master",
 		"omnipay/common": "~2.3.0",
 		"ignited/laravel-omnipay": "1.*",
-		"omnipay/paypal": "*"
+		"omnipay/paypal": "*",
+		"dingo/api": "0.8.*"
 	},
 	"autoload": {
 		"psr-0": { 

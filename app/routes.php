@@ -1,4 +1,16 @@
 <?php
+//API Route
+Route::api(['version' => 'v1', 'before' => 'api.logs'], function(){
+
+  //There can be a group of routes
+  //Unless you change the version of the API this route will run.
+  Route::get('api/products', 'APIProductController@index');
+  Route::get('api/products/{id}', 'APIProductController@show');
+
+});
+
+
+//Admin Route
 Route::get('/', function() {
   return Redirect::to('/admin');
 });

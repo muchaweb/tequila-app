@@ -32,6 +32,7 @@ class Product extends Eloquent{
         'price'       =>  'required',
     );
 
+
     /**
     * Custom validation messages.
     *
@@ -41,7 +42,13 @@ class Product extends Eloquent{
         'required'  => 'Campo obligatorio',
         'image'     => 'Debe subir una imagen',
         'mimes'     => 'Revise el tipo de archivo'
-    );   
+    );
+
+
+    public function gallery()
+    {
+       return $this->hasMany('Gallery', 'id_product_fk');
+    }   
 
 }
 

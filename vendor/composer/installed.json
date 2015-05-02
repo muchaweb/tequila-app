@@ -234,42 +234,6 @@
         ]
     },
     {
-        "name": "d11wtq/boris",
-        "version": "v1.0.8",
-        "version_normalized": "1.0.8.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/d11wtq/boris.git",
-            "reference": "125dd4e5752639af7678a22ea597115646d89c6e"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/d11wtq/boris/zipball/125dd4e5752639af7678a22ea597115646d89c6e",
-            "reference": "125dd4e5752639af7678a22ea597115646d89c6e",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "suggest": {
-            "ext-pcntl": "*",
-            "ext-posix": "*",
-            "ext-readline": "*"
-        },
-        "time": "2014-01-17 12:21:18",
-        "bin": [
-            "bin/boris"
-        ],
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Boris": "lib"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/"
-    },
-    {
         "name": "classpreloader/classpreloader",
         "version": "1.0.2",
         "version_normalized": "1.0.2.0",
@@ -514,65 +478,6 @@
             "twofish",
             "x.509",
             "x509"
-        ]
-    },
-    {
-        "name": "patchwork/utf8",
-        "version": "v1.2.1",
-        "version_normalized": "1.2.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/tchwork/utf8.git",
-            "reference": "01f0ed1628db7794e2d4e336f55a09daef4248a5"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/tchwork/utf8/zipball/01f0ed1628db7794e2d4e336f55a09daef4248a5",
-            "reference": "01f0ed1628db7794e2d4e336f55a09daef4248a5",
-            "shasum": ""
-        },
-        "require": {
-            "lib-pcre": ">=7.3",
-            "php": ">=5.3.0"
-        },
-        "suggest": {
-            "ext-iconv": "Use iconv for best performance",
-            "ext-intl": "Use Intl for best performance",
-            "ext-mbstring": "Use Mbstring for best performance",
-            "ext-wfio": "Use WFIO for UTF-8 filesystem access on Windows"
-        },
-        "time": "2015-01-29 08:36:50",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.2-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Patchwork": "class/",
-                "Normalizer": "class/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "(Apache-2.0 or GPL-2.0)"
-        ],
-        "authors": [
-            {
-                "name": "Nicolas Grekas",
-                "email": "p@tchwork.com"
-            }
-        ],
-        "description": "Portable and performant UTF-8, Unicode and Grapheme Clusters for PHP",
-        "homepage": "https://github.com/tchwork/utf8",
-        "keywords": [
-            "grapheme",
-            "i18n",
-            "unicode",
-            "utf-8",
-            "utf8"
         ]
     },
     {
@@ -2121,18 +2026,249 @@
         ]
     },
     {
+        "name": "d11wtq/boris",
+        "version": "v1.0.10",
+        "version_normalized": "1.0.10.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/borisrepl/boris.git",
+            "reference": "31055b15e2d3fe47f31f6aa8e277f8f3fc7eb483"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/borisrepl/boris/zipball/31055b15e2d3fe47f31f6aa8e277f8f3fc7eb483",
+            "reference": "31055b15e2d3fe47f31f6aa8e277f8f3fc7eb483",
+            "shasum": ""
+        },
+        "require": {
+            "ext-pcntl": "*",
+            "ext-posix": "*",
+            "ext-readline": "*",
+            "php": ">=5.3.0"
+        },
+        "time": "2015-03-01 08:05:19",
+        "bin": [
+            "bin/boris"
+        ],
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Boris": "lib"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "A tiny, but robust REPL (Read-Evaluate-Print-Loop) for PHP."
+    },
+    {
+        "name": "patchwork/utf8",
+        "version": "v1.2.2",
+        "version_normalized": "1.2.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/tchwork/utf8.git",
+            "reference": "7287a6fb2c46a66ac6bfbaf0e4975229b27efcba"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/tchwork/utf8/zipball/7287a6fb2c46a66ac6bfbaf0e4975229b27efcba",
+            "reference": "7287a6fb2c46a66ac6bfbaf0e4975229b27efcba",
+            "shasum": ""
+        },
+        "require": {
+            "lib-pcre": ">=7.3",
+            "php": ">=5.3.0"
+        },
+        "suggest": {
+            "ext-iconv": "Use iconv for best performance",
+            "ext-intl": "Use Intl for best performance",
+            "ext-mbstring": "Use Mbstring for best performance",
+            "ext-wfio": "Use WFIO for UTF-8 filesystem access on Windows"
+        },
+        "time": "2015-04-26 09:51:43",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Patchwork": "class/",
+                "Normalizer": "class/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "(Apache-2.0 or GPL-2.0)"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            }
+        ],
+        "description": "Portable and performant UTF-8, Unicode and Grapheme Clusters for PHP",
+        "homepage": "https://github.com/tchwork/utf8",
+        "keywords": [
+            "grapheme",
+            "i18n",
+            "unicode",
+            "utf-8",
+            "utf8"
+        ]
+    },
+    {
+        "name": "league/fractal",
+        "version": "0.11.0",
+        "version_normalized": "0.11.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/fractal.git",
+            "reference": "5abf7b1ce12fea1e575355f76f4f58f15dba4be4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thephpleague/fractal/zipball/5abf7b1ce12fea1e575355f76f4f58f15dba4be4",
+            "reference": "5abf7b1ce12fea1e575355f76f4f58f15dba4be4",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "illuminate/pagination": "~4.1",
+            "mockery/mockery": "~0.9",
+            "pagerfanta/pagerfanta": "~1.0.0",
+            "phpunit/phpunit": "~4.0",
+            "squizlabs/php_codesniffer": "~1.5",
+            "zendframework/zend-paginator": "~2.3"
+        },
+        "suggest": {
+            "illuminate/pagination": "The Illuminate Pagination component.",
+            "pagerfanta/pagerfanta": "Pagerfanta Paginator",
+            "zendframework/zend-paginator": "Zend Framework Paginator"
+        },
+        "time": "2014-12-10 16:59:07",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.10-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "League\\Fractal\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Phil Sturgeon",
+                "email": "me@philsturgeon.uk",
+                "homepage": "http://philsturgeon.uk/",
+                "role": "Developer"
+            }
+        ],
+        "description": "Handle the output of complex data structures ready for JSON output.",
+        "homepage": "http://fractal.thephpleague.com/",
+        "keywords": [
+            "api",
+            "json",
+            "league",
+            "rest"
+        ]
+    },
+    {
+        "name": "dingo/api",
+        "version": "v0.8.3",
+        "version_normalized": "0.8.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/dingo/api.git",
+            "reference": "7ea62887e0cec50d35ba9da2c52d3f2a06959b53"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/dingo/api/zipball/7ea62887e0cec50d35ba9da2c52d3f2a06959b53",
+            "reference": "7ea62887e0cec50d35ba9da2c52d3f2a06959b53",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "~4.1",
+            "league/fractal": "0.11.*",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "illuminate/auth": "4.2.*",
+            "illuminate/console": "4.2.*",
+            "illuminate/database": "4.2.*",
+            "illuminate/events": "4.2.*",
+            "illuminate/filesystem": "4.2.*",
+            "illuminate/pagination": "4.2.*",
+            "illuminate/routing": "4.2.*",
+            "lucadegasperi/oauth2-server-laravel": "3.0.*",
+            "mockery/mockery": "~0.9",
+            "phpunit/phpunit": "~4.0",
+            "squizlabs/php_codesniffer": "~2.0",
+            "tymon/jwt-auth": "0.4.*"
+        },
+        "suggest": {
+            "lucadegasperi/oauth2-server-laravel": "Use the League OAuth 2.0 server to protect your API.",
+            "tymon/jwt-auth": "Protect your API with JSON Web Tokens"
+        },
+        "time": "2015-04-01 06:52:46",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.8-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Dingo\\Api\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Jason Lewis",
+                "email": "jason.lewis1991@gmail.com"
+            }
+        ],
+        "description": "A RESTful API package for the Laravel framework.",
+        "keywords": [
+            "api",
+            "dingo",
+            "laravel",
+            "restful"
+        ]
+    },
+    {
         "name": "intervention/image",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/Intervention/image.git",
-            "reference": "8f3761154b4c1f5128365dfc32cbf757f27d97b6"
+            "reference": "6626d7624ac0895137a38c123943afedd0827efc"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Intervention/image/zipball/8f3761154b4c1f5128365dfc32cbf757f27d97b6",
-            "reference": "8f3761154b4c1f5128365dfc32cbf757f27d97b6",
+            "url": "https://api.github.com/repos/Intervention/image/zipball/6626d7624ac0895137a38c123943afedd0827efc",
+            "reference": "6626d7624ac0895137a38c123943afedd0827efc",
             "shasum": ""
         },
         "require": {
@@ -2148,7 +2284,7 @@
             "ext-imagick": "to use Imagick based image processing.",
             "intervention/imagecache": "Caching extension for the Intervention Image library"
         },
-        "time": "2015-03-18 17:41:04",
+        "time": "2015-04-24 14:50:48",
         "type": "library",
         "installation-source": "dist",
         "autoload": {

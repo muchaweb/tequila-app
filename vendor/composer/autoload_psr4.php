@@ -8,5 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Omnipay\\PayPal\\' => array($vendorDir . '/omnipay/paypal/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
+    'League\\Fractal\\' => array($vendorDir . '/league/fractal/src'),
     'Intervention\\Image\\' => array($vendorDir . '/intervention/image/src/Intervention/Image'),
+    'Dingo\\Api\\' => array($vendorDir . '/dingo/api/src'),
 );

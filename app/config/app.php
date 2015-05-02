@@ -94,7 +94,7 @@ return array(
 	*/
 
 	'providers' => array(
-
+		'Dingo\Api\Provider\ApiServiceProvider',
 		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',
@@ -153,6 +153,7 @@ return array(
 
 	'aliases' => array(
 
+		'API'             => 'Dingo\Api\Facade\API',
 		'App'             => 'Illuminate\Support\Facades\App',
 		'Artisan'         => 'Illuminate\Support\Facades\Artisan',
 		'Auth'            => 'Illuminate\Support\Facades\Auth',

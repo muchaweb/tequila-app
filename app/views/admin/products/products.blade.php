@@ -32,7 +32,7 @@
                         {{ $product->product }}
                     </p> 
                     <p>
-                        Tamaño: {{ $product->size }}
+                        Tamaño: {{ $product->size }} {{ $product->unit }}
                     </p>
                     <p>
                         Etiqueta: {{ $product->label }}

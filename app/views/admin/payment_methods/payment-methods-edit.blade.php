@@ -40,13 +40,13 @@
         </div>
     </div>
 
-    <!--<div class="form-group">
+    <div class="form-group">
         <div class="col-md-12">
             @if($pm->id == 2)
                 <a href="{{ URL::route('paypal_edit', $pm->id)}}" class="btn-primary btn-sm">Configurar PayPal</a>
             @endif
         </div>
-    </div>-->
+    </div>
 
     <div class="form-group">
         <div class="col-md-12">

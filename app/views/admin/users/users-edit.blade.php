@@ -14,7 +14,7 @@
 {{ Form::open(array('class' => 'form-horizontal login', 'autocomplete' => 'off')) }}
 
     <div class="form-group">
-        <div class="col-md-4">
+        <div class="col-md-9">
             <label for="" class="">Nombre(s)</label>
             {{ Form::text('name', Input::old('name') ? Input::old('name') : $users->name, array('class' => 'form-control input', 'placeholder' => 'Nombre(s)')) }}
             
@@ -24,8 +24,9 @@
             @endforeach
             {{--- Error --}}
         </div>
-
-        <div class="col-md-4">
+    </div>
+    <div class="form-group">
+        <div class="col-md-9">
             <label for="" class="">Apellidos</label>
             {{ Form::text('lastname', Input::old('lastname') ? Input::old('lastname') : $users->lastname, array('class' => 'form-control input', 'placeholder' => 'Apellidos')) }}
                 
@@ -35,8 +36,9 @@
             @endforeach
             {{--- Error --}}  
         </div>
-
-        <div class="col-md-4">
+    </div>
+    <div class="form-group">
+        <div class="col-md-9">
             <label for="" class="">Nickname</label>
             {{ Form::text('nickname', Input::old('nickname') ? Input::old('nickname') : $users->nickname, array('class' => 'form-control input', 'placeholder' => 'Nombre.Puesto')) }}
             
@@ -49,8 +51,7 @@
     </div>
 
     <div class="form-group">
-
-        <div class="col-md-3">
+        <div class="col-md-9">
             <label for="" class="">Rol</label>
             {{ Form:: select('rol', $combo_rol, $selected_rol, (array('class' => 'form-control input', 'placeholder' => 'Seleccione'))) }}
 
@@ -60,8 +61,9 @@
             @endforeach
             {{--- Error --}}
         </div>
-
-        <div class="col-md-3">
+    </div>
+    <div class="form-group">
+        <div class="col-md-9">
             <label for="" class="">Puesto</label>
             {{ Form::text('job', Input::old('job') ? Input::old('job') : $users->job, array('class' => 'form-control input', 'placeholder' => 'Puesto')) }}
             
@@ -72,8 +74,9 @@
             {{--- Error --}}
         </div>
 
-        
-        <div class="col-md-3">
+    </div>
+    <div class="form-group">  
+        <div class="col-md-9">
             <label for="" class="">Teléfono</label>
             {{ Form::text('phone',Input::old('phone') ? Input::old('phone') : $users->phone, array('class' => 'form-control input', 'placeholder' => 'Télefono')) }}
             
@@ -83,8 +86,9 @@
             @endforeach
             {{--- Error --}}
         </div>
-
-        <div class="col-md-3">
+    </div>
+    <div class="form-group">
+        <div class="col-md-9">
             <label for="" class="">Email</label>
             {{ Form::text('email', Input::old('email') ? Input::old('email') : $users->email, array('class' => 'form-control input', 'placeholder' => 'Email')) }}
             

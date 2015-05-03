@@ -77,12 +77,10 @@ class UserController extends \BaseController {
      */
     public function store(){
 
-        $validator = Validator::make(Input::all(), 
-                                               User::$rules, 
+        $validator = Validator::make(Input::all(),User::$rules_new, 
                                                User::$messages);
-
+        
         if($validator->passes()) {
-            
             $store                   = Business::first();
             $business_name           = $store->business;
             $business_phone          = $store->phone;
@@ -138,7 +136,7 @@ class UserController extends \BaseController {
             $id_user->active = $id_user->active ? false : true;
             $id_user->save();
         }
-        return Redirect::route('user_list');
+        return Redirect::route('user_list')->with('success', 'Usuario actualizado');
     }
 
     public function destroy($id)
@@ -225,43 +223,55 @@ class UserController extends \BaseController {
 
         if($validator_reset_password->passes()){
             $user            = User::find($id);
-            $user->password  = Hash::make(Input::get('password'));
 
-            //-- Email data
-            $email      = $user->email;
-            $name       = $user->name;
-            $lastname   = $user->lastname;
+          $current_pw = $user->password;
+          $pw_by_user = Input::get('old_password');
+            
+            if(Hash::check($pw_by_user, $current_pw )){
+                echo "true";
+                $user->password  = Hash::make(Input::get('password'));
 
-            //-- Business data
-            $store                   = Business::first();
-            $business_name           = $store->business;
-            $business_phone          = $store->phone;
-            $business_email          = $store->email;
-            $business_address        = $store->address;
+                //-- Email data
+                $email      = $user->email;
+                $name       = $user->name;
+                $lastname   = $user->lastname;
 
-            $user->save();
+                //-- Business data
+                $store                   = Business::first();
+                $business_name           = $store->business;
+                $business_phone          = $store->phone;
+                $business_email          = $store->email;
+                $business_address        = $store->address;
 
-            Mail::send('emails.admin.users.reset-password', 
-                
-                array('name'              =>    $name,
-                      'lastname'          =>    $lastname,
-                      'password'          =>    Input::get('password'),
-                      'business'          =>    $business_name,
-                      'phone'             =>    $business_phone,
-                      'email'             =>    $business_email,
-                      'address'           =>    $business_address), function($message) use($email, $name, $lastname) {
+                $user->save();
 
-                $message->to($email, $name.' '.$lastname)
-                        ->subject('Cambio de password de usuario');
-            });
+                Mail::send('emails.admin.users.reset-password', 
+                    
+                    array('name'              =>    $name,
+                          'lastname'          =>    $lastname,
+                          'password'          =>    Input::get('password'),
+                          'business'          =>    $business_name,
+                          'phone'             =>    $business_phone,
+                          'email'             =>    $business_email,
+                          'address'           =>    $business_address), function($message) use($email, $name, $lastname) {
 
-            return Redirect::route('user_list');
+                    $message->to($email, $name.' '.$lastname)
+                            ->subject('Cambio de password de usuario');
+                });
 
-        } else {
+                return Redirect::route('user_list');
+
+            } else {
+                return Redirect::to('/admin/users/reset-password/'.$id)
+                                ->with('error', 'Revise los siguientes errores')
+                                ->withErrors($validator_reset_password)
+                                ->withInput();
+            }
+        }else{
             return Redirect::to('/admin/users/reset-password/'.$id)
-                            ->with('error', 'Revise los siguientes errores')
-                            ->withErrors($validator_reset_password)
-                            ->withInput();
+                                ->with('error', 'El password antiguo es incorrecto')
+                                ->withErrors($validator_reset_password)
+                                ->withInput();
         }
     }
 }

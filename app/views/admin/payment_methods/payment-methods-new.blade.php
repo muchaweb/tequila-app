@@ -13,7 +13,7 @@
 {{ Form::open(array('class' => 'form-horizontal login', 'autocomplete' => 'off')) }}
 
     <div class="form-group">
-        <div class="col-md-6">
+        <div class="col-md-9">
             <label for="" class="">Método de pago</label>
             {{ Form::text('payment_method', null, array('class' => 'form-control input', 'placeholder' => 'Método de pago')) }}
             
@@ -23,8 +23,9 @@
             @endforeach
             {{--- Error --}}
         </div>
-        
-        <div class="col-md-6">
+    </div>
+    <div class="form-group">
+        <div class="col-md-9">
             <label for="" class="">Activar</label>
             {{ Form::select('active', [
                '0' => 'No',
@@ -34,7 +35,7 @@
     </div>
 
     <div class="form-group">
-        <div class="col-md-12">
+        <div class="col-md-9">
          <label for="" class="">Descripción</label>
          {{ Form::textarea('description', null, ['class' => 'form-control input']) }}
 

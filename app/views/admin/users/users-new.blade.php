@@ -16,7 +16,7 @@
 {{ Form::open(array('class' => 'form-horizontal login', 'autocomplete' => 'off')) }}
 
     <div class="form-group">
-        <div class="col-md-4">
+        <div class="col-md-9">
             <label for="" class="">Nombre(s)</label>
             {{ Form::text('name', null, array('class' => 'form-control input', 'placeholder' => 'Nombre(s)')) }}
             
@@ -26,8 +26,9 @@
             @endforeach
             {{--- Error --}}
         </div>
-
-        <div class="col-md-4">
+    </div>
+    <div class="form-group">
+        <div class="col-md-9">
             <label for="" class="">Apellidos</label>
             {{ Form::text('lastname', null, array('class' => 'form-control input', 'placeholder' => 'Apellidos')) }}
                 
@@ -37,8 +38,9 @@
             @endforeach
             {{--- Error --}}  
         </div>
-
-        <div class="col-md-4">
+    </div>
+    <div class="form-group">
+        <div class="col-md-9">
             <label for="" class="">Grupo</label>
             {{ Form:: select('rol', $combobox, $selected, (array('class' => 'form-control input', 'placeholder' => 'Seleccione'))) }}
 
@@ -51,7 +53,7 @@
     </div>
 
     <div class="form-group">
-        <div class="col-md-4">
+        <div class="col-md-9">
             <label for="" class="">Nickname</label>
             {{ Form::text('nickname', null, array('class' => 'form-control input', 'placeholder' => 'Nombre.Puesto')) }}
             
@@ -61,8 +63,9 @@
             @endforeach
             {{--- Error --}}
         </div>
-
-        <div class="col-md-4">
+    </div>
+    <div class="form-group">
+        <div class="col-md-9">
             <label for="" class="">Puesto</label>
             {{ Form::text('job',null, array('class' => 'form-control input', 'placeholder' => 'Puesto')) }}
             
@@ -72,8 +75,9 @@
             @endforeach
             {{--- Error --}}
         </div>
-
-        <div class="col-md-4">
+    </div>
+    <div class="form-group">
+        <div class="col-md-9">
             <label for="" class="">Teléfono</label>
             {{ Form::text('phone',null, array('class' => 'form-control input', 'placeholder' => 'Télefono')) }}
             
@@ -86,7 +90,7 @@
     </div>
 
     <div class="form-group">
-        <div class="col-md-4">
+        <div class="col-md-9">
             <label for="" class="">Email</label>
             {{ Form::text('email', null, array('class' => 'form-control input', 'placeholder' => 'Email')) }}
             
@@ -96,8 +100,9 @@
             @endforeach
             {{--- Error --}}
         </div>
-
-        <div class="col-md-4">
+    </div>
+    <div class="form-group">
+        <div class="col-md-9">
             <label for="" class="">Password</label>
             {{ Form::password('password', array('class' => 'form-control input', 'placeholder' => 'Password')) }}
             
@@ -107,8 +112,9 @@
             @endforeach
             {{--- Error --}}
         </div>
-
-        <div class="col-md-4">
+    </div>
+    <div class="form-group">
+        <div class="col-md-9">
             <label for="" class="">Confirmar Password</label>
             {{ Form::password('password_confirmation', array('class' => 'form-control input', 'placeholder' => 'Confirmar Password')) }}
             

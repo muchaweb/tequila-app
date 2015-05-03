@@ -24,7 +24,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	*
 	* @var array
 	*/
-	public static $rules = array(
+	public static $rules_new = array(
 		'name' 					=> 	'required|between:2,100',
 		'lastname' 				=> 	'required|between:2,100',
 		'password_confirmation'	=> 	'required|between:6,12|alpha_num',
@@ -33,7 +33,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		'job' 					=>  'alpha_dash',
 		'phone' 				=>  'required',
 		'password' 				=> 	'required|between:6,12|alpha_num|confirmed',
-		'group_permissions_id'	=> 	'required|not_in:0'
+		'rol'					=> 	'required|not_in:0'
 	);
 	
 	/**

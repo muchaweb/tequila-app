@@ -34,6 +34,3 @@ $('#confirmDelete').find('.modal-footer #confirm').on('click', function(){
 
     $btncan = $(e.relatedTarget).attr('data-btncancel');
 });*/
-$(document).ready(function() {
-    $("#fancybox").fancybox();
-});

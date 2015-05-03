@@ -1,4 +1,4 @@
-@extends('admin.events.inner-layout')
+@extends('admin.templates.inner-layout')
 @section ('title') Listados de Eventos @stop
 
 @section('content')
@@ -13,46 +13,44 @@
 
 <table class="table table-striped table-hover">
     <thead>
-        <th>Eventos</th>
+        <th>Evento</th>
         <th>Plantillas</th>
-        <th>Descripción</th>
         <th>Activo</th>
         <th>Editar</th>
         <th>Eliminar</th>
     </thead>
     <tbody>
-        @if(count($events))
-            @foreach($events as $event)
+        @if(count($templates))
+            @foreach($templates as $template)
             <tr>
-                <td>{{ $event->event }} </td>
+                <td>{{ $template->event }} </td>
                 <td>
                     <p>
                         <a>
-                            {{ HTML::image('uploads/templates/'.$event->path_image, '', array('width' => 200)) }}
+                            {{ HTML::image('uploads/templates/'.$template->path_image, '', array('width' => 200)) }}
                         </a>
                     </p>
                     <p>
-                        <a href="{{ URL::route('find_templates_event', $event->id)}}" class="btn-primary btn-sm">Ver plantillas</a>
+                        <a href="{{ URL::route('template_form', $template->id)}}" class="btn-primary btn-sm">Ver plantillas</a>
                     </p>
                 </td>
-                <td>{{ $event->description }}</td>
-                <td>
++                <td>
                 {{ Form::open() }}
-                    <input type="checkbox"  onClick="this.form.submit()" {{ $event->active ? 'checked' : '' }} />
-                    <input type="hidden" name="id" value="{{ $event->id }}">
+                    <input type="checkbox"  onClick="this.form.submit()" {{ $template->active ? 'checked' : '' }} />
+                    <input type="hidden" name="id" value="{{ $template->id }}">
                 {{ Form::close() }}
                 </td>
                 <td>
-                    <a href="{{ URL::route('event_edit_form', $event->id)}}" class="btn-primary btn-sm">Editar</a>
+                    <a href="{{ URL::route('event_edit_form', $template->id)}}" class="btn-primary btn-sm">Editar</a>
                 </td>
                 <td>
-                    {{ Form::open(array('route' => array('event_delete', $event->id))) }}
+                    {{ Form::open(array('route' => array('event_delete', $template->id))) }}
                     {{ Form::button('Eliminar', array(
                         'class' => 'btn btn-danger btn-sm',
                         'data-toggle' => 'modal',
                         'data-target' => '#confirmDelete',
                         'data-title' => 'Eliminar evento',
-                        'data-message' => 'Está a punto de eliminar el evento '. $event->event.' ¿Desea continuar?',
+                        'data-message' => 'Está a punto de eliminar el evento '. $template->event.' ¿Desea continuar?',
                         'data-btncancel'  => 'btn-default',
                         'data-btnaction' => 'btn-danger',
                         'data-btntxt' => 'Disable'
@@ -65,13 +63,13 @@
             </tr>
             @endforeach
         @else 
-            <p>No hay eventos actualmente.</p>
+            <p>No hay plantillas actualmente.</p>
         @endif
     </tbody>
 </table>
 
 <div class="right">
-    {{ $events->links() }}
+    {{ $templates->links() }}
 </div> 
 
 @stop

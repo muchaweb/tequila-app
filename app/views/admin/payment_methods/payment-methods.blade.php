@@ -9,6 +9,8 @@
     <div class="btn-danger btn-sm invalid-access">{{Session::get('error')}}</div>
 @endif
 
+<a href="{{ URL::route('payment_method_add_new_form')}}" class="right btn-primary btn-sm">Nuevo</a>
+
 <table class="table table-striped table-hover">
     <thead>
         <th>Métodos</th>
@@ -38,6 +40,7 @@
                 </td>
 
                 <td>
+                @if($payment_method->id != 2)
                     {{ Form::open(array('route' => array('payment_method_delete', $payment_method->id))) }}
                     {{ Form::button('Eliminar', array(
                         'class' => 'btn btn-danger btn-sm',
@@ -51,6 +54,7 @@
                         )) 
                     }}
                     {{ Form::close() }}
+                @endif
 
                     @include('admin.includes.modal-confirm-delete')
                 </td>

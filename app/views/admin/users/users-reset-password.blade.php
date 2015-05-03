@@ -13,7 +13,19 @@
 
 {{ Form::open(array('class' => 'form-horizontal login', 'autocomplete' => 'off')) }}
     <div class="form-group">
-        <div class="col-md-4">
+        <div class="col-md-9">
+            <label for="" class="">Antiguo Password</label>
+            {{ Form::password('old_password', array('class' => 'form-control input', 'placeholder' => 'Antiguo Password')) }}
+            
+            {{--- Error --}}
+            @foreach($errors->get('password') as $error)
+                <span class="btn-danger btn-sm">{{ $error }}</span>
+            @endforeach
+            {{--- Error --}}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-9">
             <label for="" class="">Password</label>
             {{ Form::password('password', array('class' => 'form-control input', 'placeholder' => 'Password')) }}
             
@@ -23,13 +35,14 @@
             @endforeach
             {{--- Error --}}
         </div>
-
-        <div class="col-md-4">
+    </div>
+    <div class="form-group">
+        <div class="col-md-9">
             <label for="" class="">Confirmar Password</label>
             {{ Form::password('password_confirmation', array('class' => 'form-control input', 'placeholder' => 'Confirmar Password')) }}
             
             {{--- Error --}}
-            @foreach($errors->get('password_confirmation') as $error)
+            @foreach($errors->get('password') as $error)
                 <span class="btn-danger btn-sm">{{ $error }}</span>
             @endforeach
             {{--- Error --}}

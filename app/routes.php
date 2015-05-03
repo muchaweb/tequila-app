@@ -120,9 +120,12 @@ Route::group(array('prefix' => 'admin'),function() {
       Route::get('/edit/{id}', array('as' => 'event_edit_form','uses' => 'EventController@edit'));
 
       Route::post('/edit/{id}', array('as' => 'event_edit_process','uses' => 'EventController@update'));
+
+      Route::get('/templates/{id}', array('as' => 'find_templates_event','uses' => 'EventController@getTemplates'));
     }); 
     //--End events
-    
+
+   
     //-- PayPal
     Route::group(array('prefix' => 'paypal','before' => 'auth'),function() {
 
@@ -132,7 +135,7 @@ Route::group(array('prefix' => 'admin'),function() {
 
     }); 
     //-- End PayPal
-    
+  
     //-- Products
     Route::group(array('prefix' => 'products','before' => 'auth'),function() {
 

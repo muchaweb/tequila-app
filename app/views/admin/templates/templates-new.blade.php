@@ -1,3 +1,4 @@
+
 @extends('admin.events.inner-layout')
 @section ('title') Editar Evento @stop
 
@@ -11,11 +12,11 @@
 @endif
 
 {{ Form::open(array('class' => 'form-horizontal login', 'autocomplete' => 'off')) }}
-
     <div class="form-group">
         <div class="col-md-9">
             <label for="" class="">Evento</label>
-            {{ Form::text('event', Input::old('event') ? Input::old('event') : $event->event, array('class' => 'form-control input', 'placeholder' => 'Evento')) }}
+            @endforeach
+            {{ Form::text('event', null, array('class' => 'form-control input', 'placeholder' => 'Evento')) }}
             
             {{--- Error --}}
             @foreach($errors->get('event') as $error)
@@ -26,11 +27,11 @@
     </div>
     <div class="form-group">
         <div class="col-md-9">
-            <label for="" class="">Descripción</label>
-            {{ Form::textarea('description', Input::old('description') ? Input::old('description') : $event->description, ['class' => 'form-control input']) }}
-            
+            <label for="" class="">Plantilla</label>
+            {{ Form::file('image',array('class' => 'form-control input')) }}
+
             {{--- Error --}}
-            @foreach($errors->get('description') as $error)
+            @foreach($errors->get('image') as $error) 
                 <span class="btn-danger btn-sm">{{ $error }}</span>
             @endforeach
             {{--- Error --}}

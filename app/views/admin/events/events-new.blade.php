@@ -10,10 +10,10 @@
     <div class="btn-danger btn-sm invalid-access">{{Session::get('error')}}</div>
 @endif
 
-{{ Form::open(array('class' => 'form-horizontal login', 'autocomplete' => 'off')) }}
+{{ Form::open(array('class' => 'form-horizontal login', 'files' => true, 'autocomplete' => 'off')) }}
 
     <div class="form-group">
-        <div class="col-md-6">
+        <div class="col-md-9">
             <label for="" class="">Evento</label>
             {{ Form::text('event', null, array('class' => 'form-control input', 'placeholder' => 'Evento')) }}
             
@@ -23,8 +23,21 @@
             @endforeach
             {{--- Error --}}
         </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-9">
+            <label for="" class="">Plantilla</label>
+            {{ Form::file('image',array('class' => 'form-control input')) }}
 
-        <div class="col-md-6">
+            {{--- Error --}}
+            @foreach($errors->get('image') as $error) 
+                <span class="btn-danger btn-sm">{{ $error }}</span>
+            @endforeach
+            {{--- Error --}}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-9">
             <label for="" class="">Activar</label>
             {{ Form::select('active', [
                '0' => 'No',
@@ -34,7 +47,7 @@
     </div>
 
     <div class="form-group">
-        <div class="col-md-12">
+        <div class="col-md-9">
          <label for="" class="">Descripción</label>
          {{ Form::textarea('description', null, ['class' => 'form-control input']) }}
 

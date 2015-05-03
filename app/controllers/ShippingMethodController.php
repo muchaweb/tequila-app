@@ -118,7 +118,7 @@ class ShippingMethodController extends \BaseController {
 	        $id_sm->active = $id_sm->active ? false : true;
 	        $id_sm->save();
 	    }
-	    return Redirect::route('shipping_method_list');
+	    return Redirect::route('shipping_method_list')->with('success', 'Método de envío actualizado');
 	}
 
 	/**

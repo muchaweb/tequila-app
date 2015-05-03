@@ -43,7 +43,7 @@ class PaymentMethodController extends \BaseController {
 		 */
 		public function store()
 		{
-			$validator_pm_form = Validator::make(Input::all(), PaymentMethod::$rules_pm_form, PaymentMethod::$messages);
+			$validator_pm_form = Validator::make(Input::all(), PaymentMethod::$rules, PaymentMethod::$messages);
 
 			if($validator_pm_form->passes()) {		            
 			    $pm                 = new PaymentMethod;
@@ -90,7 +90,7 @@ class PaymentMethodController extends \BaseController {
 		public function update($id)
 		{
 			$validator_pm_form = Validator::make(Input::all(), 
-												 PaymentMethod::$rules_pm_form, 
+												 PaymentMethod::$rules, 
 												 PaymentMethod::$messages);
 
 			if($validator_pm_form->passes()) {
@@ -119,7 +119,7 @@ class PaymentMethodController extends \BaseController {
 		        $id_pm->active = $id_pm->active ? false : true;
 		        $id_pm->save();
 		    }
-		    return Redirect::route('payment_method_list');
+		    return Redirect::route('payment_method_list')->with('success', 'Método de pago actualizado');
 		}
 
 		/**

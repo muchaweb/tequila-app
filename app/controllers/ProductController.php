@@ -92,7 +92,7 @@ class ProductController extends \BaseController {
 
 			}else{
 
-				$id_product = Product::findOrFail($id);
+				$id_product = Product::findOrFail($id_last_product);
 
 		        if($id_product != ""){
 		           $id_product->delete();

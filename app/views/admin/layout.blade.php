@@ -174,10 +174,13 @@
       @yield('inner-layout')
 
     </div>
+
     {{ HTML::script('scripts/vendor.js') }}
     {{ HTML::script('scripts/plugins.js') }}
-    {{ HTML::script('packages/fancybox/jquery.fancybox.js') }}
     {{ HTML::script('scripts/main.js') }}
-
+    <script src="//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"></script>
+    <script> 
+      CKEDITOR.replaceAll();
+    </script>
   </body>
 </html>

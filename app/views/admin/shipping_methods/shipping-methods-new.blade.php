@@ -16,7 +16,7 @@
 {{ Form::open(array('class' => 'form-horizontal login', 'autocomplete' => 'off')) }}
 
     <div class="form-group">
-        <div class="col-md-4">
+        <div class="col-md-9">
             <label for="" class="">Método de envío</label>
             {{ Form::text('shipping_method', null, array('class' => 'form-control input', 'placeholder' => 'Método de envío')) }}
             
@@ -26,8 +26,9 @@
             @endforeach
             {{--- Error --}}
         </div>
-
-        <div class="col-md-4">
+    </div>
+    <div class="form-group">
+        <div class="col-md-9">
             <label for="" class="">Tarifa</label>
             {{ Form::text('cost', null, array('class' => 'form-control input', 'placeholder' => 'Tarifa')) }}
                 
@@ -37,8 +38,9 @@
             @endforeach
             {{--- Error --}}  
         </div>
-
-        <div class="col-md-4">
+    </div>
+    <div class="form-group">
+        <div class="col-md-9">
             <label for="" class="">Activar</label>
             {{ Form::select('active', [
                '0' => 'No',
@@ -48,7 +50,7 @@
     </div>
 
     <div class="form-group">
-        <div class="col-md-12">
+        <div class="col-md-9">
          <label for="" class="">Descripción</label>
          {{ Form::textarea('description', null, ['class' => 'form-control input']) }}
 

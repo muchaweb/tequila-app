@@ -15,7 +15,8 @@ class EventModel extends Eloquent{
     */
     public static $rules = array(
         'event'         =>  'required',
-        'description'   =>  'required'
+        'description'   =>  'required',
+        'image'         =>  'required|image|mimes:jpeg,jpg,bmp,png,gif'
     );
 
     /**
@@ -24,7 +25,9 @@ class EventModel extends Eloquent{
     * @var array
     */
     public static $messages = array(
-        'required'  => 'Campo obligatorio'
+        'required'  => 'Campo obligatorio',
+        'image'     => 'Debe subir una imagen',
+        'mimes'     => 'Revise el tipo de archivo'
     );
 
 }

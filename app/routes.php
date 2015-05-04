@@ -7,7 +7,7 @@ Route::api(['version' => 'v1', 'before' => 'api.logs'], function(){
   //First get by category
   Route::get('api/category', 'APICategoryController@index');
   Route::get('api/category/{id}', 'APICategoryController@show');
-  
+  Route::get('api/content', 'APIBottleSizeController@index');
   /*Route::get('api/products', 'APIProductController@index');
   Route::get('api/product/{id}', 'APIProductController@show');*/
 

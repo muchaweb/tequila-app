@@ -1,6 +1,6 @@
 <?php
 
-class APIBottleSizeController extends \BaseController {
+class APIEventController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,18 +9,19 @@ class APIBottleSizeController extends \BaseController {
 	 */
 	public function index()
 	{
-		return APIBottleSize::all();
+		$events = APIEvent::all();
+		return $events;
 	}
-	
 
 	/**
 	 * Display the specified resource.
 	 *
 	 * @param  int  $id
 	 * @return Response
-	 */
+	*/
 	public function show($id)
 	{
-		return $product = APIBottleSize::find($id);
+		$event = APIEvent::with('template_event')->find($id);
+		return $event;
 	}
 }

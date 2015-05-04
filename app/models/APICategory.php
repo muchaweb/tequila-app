@@ -7,11 +7,10 @@ class APICategory extends Eloquent{
      */
     protected $table = 'categories';
 
-    public function category_product()
+    public function list_categories()
     {
-       return $this->hasMany('APIProduct', 'id_category_fk');
-    }   
-
+       return $this->hasManyThrough('APIProduct', 'APICategory', 'id','id');
+    }  
     
 }
 

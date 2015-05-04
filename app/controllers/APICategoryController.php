@@ -9,7 +9,8 @@ class APICategoryController extends \BaseController {
 	 */
 	public function index()
 	{
-		return APICategory::with('category_product')->get();
+		return APICategory::with('list_categories')->get();
+		//return APICategory::with('list_categories','picture', 'content')->get();
 	}
 
 	/**
@@ -20,7 +21,7 @@ class APICategoryController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return $category = APICategory::with('category_product')->find($id);
+		return $category = APICategory::with('list_categories')->find($id);
 	}
 
 }

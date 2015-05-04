@@ -9,7 +9,6 @@ class APIBottleSizeController extends \BaseController {
 	 */
 	public function index()
 	{
-		return APIBottleSize::all();
 	}
 	
 
@@ -21,6 +20,5 @@ class APIBottleSizeController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return $product = APIBottleSize::find($id);
 	}
 }

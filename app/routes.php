@@ -3,13 +3,19 @@
 Route::api(['version' => 'v1', 'before' => 'api.logs'], function(){
 
   //There can be a group of routes
-  //Unless you change the version of the API this route will run.
-  //First get by category
+  //Unless you change the version of the API this routes will run.
   Route::get('api/category', 'APICategoryController@index');
   Route::get('api/category/{id}', 'APICategoryController@show');
-  Route::get('api/content', 'APIBottleSizeController@index');
-  /*Route::get('api/products', 'APIProductController@index');
-  Route::get('api/product/{id}', 'APIProductController@show');*/
+
+  //This what I need for the first JSON
+  Route::get('api/products', 'APIProductController@index');
+  Route::get('api/products/{id}', 'APIProductController@show');
+
+  //This what I need for the second JSON
+  Route::get('api/events', 'APIEventController@index');
+
+  //This what I need for the third JSON
+  Route::get('api/events/{id}', 'APIEventController@show');
 
 });
 

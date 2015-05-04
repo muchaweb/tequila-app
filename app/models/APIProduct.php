@@ -8,7 +8,7 @@ class APIProduct extends Eloquent{
     protected $table = 'products';
 
 
-    /*public function picture()
+    public function picture()
     {
        return $this->hasMany('APIGallery', 'id_product_fk');
     }   
@@ -16,8 +16,14 @@ class APIProduct extends Eloquent{
 
     public function content()
     {
-       return $this->hasMany('APIBottleSize', 'id', 'id_size_fk');
-    }*/
+       return $this->hasOne('APIBottleSize', 'id', 'id_size_fk');
+    } 
+
+
+    public function box()
+    {
+       return $this->hasOne('APIAttribute', 'id', 'id_attribute_fk');
+    } 
     
 }
 

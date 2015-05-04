@@ -9,7 +9,8 @@ class APIProductController extends \BaseController {
 	 */
 	public function index()
 	{
-		return APIProduct::with('picture', 'content')->get();
+		$products = APIProduct::with('picture', 'content','box')->get();
+		return $products;
 	}
 	
 
@@ -18,11 +19,10 @@ class APIProductController extends \BaseController {
 	 *
 	 * @param  int  $id
 	 * @return Response
-	 */
-	public function show($id_product_fk)
+	*/
+	public function show($id)
 	{
-		$product = APIProduct::with('picture','content')->find($id_product_fk);
+		$product = APIProduct::with('picture','content', 'box')->find($id);
 		return $product;
-
 	}
 }

@@ -12,11 +12,6 @@ class APICategory extends Eloquent{
        return $this->hasMany('APIProduct', 'id_category_fk');
     }   
 
-    public function category_product()
-    {
-       return $this->hasMany('APIProduct', 'id_category_fk');
-    }  
-    
     
 }
 
